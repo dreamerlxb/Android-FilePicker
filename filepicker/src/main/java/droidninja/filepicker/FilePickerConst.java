@@ -6,7 +6,6 @@ import android.Manifest;
  * Created by droidNinja on 28/07/16.
  */
 public class FilePickerConst {
-//  public static final int REQUEST_CODE_PHOTO = 233;
   public static final int REQUEST_CODE_DOC = 234;
 
   public static final int REQUEST_CODE_MEDIA_DETAIL = 235;
@@ -15,10 +14,8 @@ public class FilePickerConst {
   public final static int DEFAULT_MAX_COUNT = -1;
   public final static int DEFAULT_COLUMN_NUMBER = 3;
 
-//  public final static int MEDIA_PICKER = 0x11;
   public final static int DOC_PICKER = 0x12;
 
-//  public final static String KEY_SELECTED_MEDIA = "SELECTED_PHOTOS";
   public final static String KEY_SELECTED_DOCS = "SELECTED_DOCS";
 
   public final static String EXTRA_PICKER_TYPE = "EXTRA_PICKER_TYPE";

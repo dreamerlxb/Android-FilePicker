@@ -34,7 +34,6 @@ public class DocPickerFragment extends BaseFragment {
     private DocPickerFragmentListener mListener;
 
     public DocPickerFragment() {
-        // Required empty public constructor
     }
 
     public interface DocPickerFragmentListener {
@@ -54,8 +53,7 @@ public class DocPickerFragment extends BaseFragment {
     }
 
     public static DocPickerFragment newInstance() {
-        DocPickerFragment docPickerFragment = new DocPickerFragment();
-        return docPickerFragment;
+        return new DocPickerFragment();
     }
 
     @Override

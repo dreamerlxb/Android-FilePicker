@@ -36,13 +36,10 @@ public class DocFragment extends BaseFragment implements FileAdapterListener {
     private FileListAdapter fileListAdapter;
 
     public DocFragment() {
-        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_photo_picker, container, false);
     }
 
@@ -70,11 +67,11 @@ public class DocFragment extends BaseFragment implements FileAdapterListener {
     }
 
     public static DocFragment newInstance(FileType fileType) {
-        DocFragment photoPickerFragment = new DocFragment();
+        DocFragment docFragment = new DocFragment();
         Bundle bun = new Bundle();
         bun.putParcelable(FILE_TYPE, fileType);
-        photoPickerFragment.setArguments(bun);
-        return photoPickerFragment;
+        docFragment.setArguments(bun);
+        return docFragment;
     }
 
     public FileType getFileType() {

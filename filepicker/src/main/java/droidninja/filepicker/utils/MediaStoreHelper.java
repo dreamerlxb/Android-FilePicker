@@ -26,11 +26,10 @@ public class MediaStoreHelper {
 //      activity.getSupportLoaderManager().initLoader(FilePickerConst.MEDIA_TYPE_VIDEO, args, new PhotoDirLoaderCallbacks(activity, resultCallback));
 //  }
 
-  public static void getDocs(FragmentActivity activity,
-                             List<FileType> fileTypes,
-                             Comparator<Document> comparator,
-                             FileMapResultCallback fileResultCallback)
-  {
-    new DocScannerTask(activity, fileTypes, comparator, fileResultCallback).execute();
-  }
+    public static void getDocs(FragmentActivity activity,
+                               List<FileType> fileTypes,
+                               Comparator<Document> comparator,
+                               FileMapResultCallback fileResultCallback) {
+        new DocScannerTask(activity, fileTypes, comparator, fileResultCallback).execute();
+    }
 }

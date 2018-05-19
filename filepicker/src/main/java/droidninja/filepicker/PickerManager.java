@@ -16,15 +16,12 @@ import java.util.LinkedHashSet;
 public class PickerManager {
     private static PickerManager ourInstance = new PickerManager();
     private int maxCount = FilePickerConst.DEFAULT_MAX_COUNT;
-//    private boolean showImages = true;
-//    private int cameraDrawable = R.drawable.ic_camera;
     private SortingTypes sortingType = SortingTypes.none;
 
     public static PickerManager getInstance() {
         return ourInstance;
     }
 
-//    private ArrayList<String> mediaFiles;
     private ArrayList<String> docFiles;
 
     private LinkedHashSet<FileType> fileTypes;
@@ -33,15 +30,9 @@ public class PickerManager {
 
     private String title = null;
 
-//    private boolean showVideos;
-
-//    private boolean showGif;
-
     private boolean showSelectAll = false;
 
     private boolean docSupport = true;
-
-//    private boolean enableCamera = true;
 
     private Orientation orientation = Orientation.UNSPECIFIED;
 
@@ -50,7 +41,6 @@ public class PickerManager {
     private String providerAuthorities;
 
     private PickerManager() {
-//        mediaFiles = new ArrayList<>();
         docFiles = new ArrayList<>();
         fileTypes = new LinkedHashSet<>();
     }
@@ -65,15 +55,11 @@ public class PickerManager {
     }
 
     public int getCurrentCount() {
-//        return mediaFiles.size() + docFiles.size();
         return docFiles.size();
     }
 
     public void add(String path, int type) {
         if (path != null && shouldAdd()) {
-//            if (!mediaFiles.contains(path) && type == FilePickerConst.FILE_TYPE_MEDIA) {
-//                mediaFiles.add(path);
-//            } else
             if (!docFiles.contains(path) && type == FilePickerConst.FILE_TYPE_DOCUMENT) {
                 docFiles.add(path);
             }
@@ -87,9 +73,6 @@ public class PickerManager {
     }
 
     public void remove(String path, int type) {
-//        if ((type == FilePickerConst.FILE_TYPE_MEDIA) && mediaFiles.contains(path)) {
-//            mediaFiles.remove(path);
-//        } else
         if (type == FilePickerConst.FILE_TYPE_DOCUMENT) {
             docFiles.remove(path);
         }
@@ -99,10 +82,6 @@ public class PickerManager {
         if (maxCount == -1) return true;
         return getCurrentCount() < maxCount;
     }
-
-//    public ArrayList<String> getSelectedPhotos() {
-//        return mediaFiles;
-//    }
 
     public ArrayList<String> getSelectedFiles() {
         return docFiles;
@@ -118,19 +97,13 @@ public class PickerManager {
 
     public void reset() {
         docFiles.clear();
-//        mediaFiles.clear();
         fileTypes.clear();
         maxCount = -1;
     }
 
     public void clearSelections() {
-//        mediaFiles.clear();
         docFiles.clear();
     }
-
-//    public void deleteMedia(ArrayList<String> paths) {
-//        mediaFiles.removeAll(paths);
-//    }
 
     public int getTheme() {
         return theme;
@@ -147,30 +120,6 @@ public class PickerManager {
     public void setTitle(String title) {
         this.title = title;
     }
-//
-//    public boolean showVideo() {
-//        return showVideos;
-//    }
-//
-//    public void setShowVideos(boolean showVideos) {
-//        this.showVideos = showVideos;
-//    }
-//
-//    public boolean showImages() {
-//        return showImages;
-//    }
-//
-//    public void setShowImages(boolean showImages) {
-//        this.showImages = showImages;
-//    }
-//
-//    public boolean isShowGif() {
-//        return showGif;
-//    }
-//
-//    public void setShowGif(boolean showGif) {
-//        this.showGif = showGif;
-//    }
 
     public boolean isShowFolderView() {
         return showFolderView;
@@ -213,14 +162,6 @@ public class PickerManager {
         this.docSupport = docSupport;
     }
 
-//    public boolean isEnableCamera() {
-//        return enableCamera;
-//    }
-//
-//    public void setEnableCamera(boolean enableCamera) {
-//        this.enableCamera = enableCamera;
-//    }
-
     public Orientation getOrientation() {
         return orientation;
     }
@@ -236,14 +177,6 @@ public class PickerManager {
     public void setProviderAuthorities(String providerAuthorities) {
         this.providerAuthorities = providerAuthorities;
     }
-
-//    public void setCameraDrawable(int drawable) {
-//        this.cameraDrawable = drawable;
-//    }
-//
-//    public int getCameraDrawable() {
-//        return cameraDrawable;
-//    }
 
     public boolean hasSelectAll() {
         return maxCount == -1 && showSelectAll;

@@ -1,4 +1,4 @@
-package droidninja.filepicker.views;
+package vi.filepicker;
 
 import android.annotation.TargetApi;
 import android.content.Context;

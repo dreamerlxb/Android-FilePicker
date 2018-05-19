@@ -52,8 +52,8 @@ public class FilePickerActivity extends AppCompatActivity
             PickerManager.getInstance().addDocTypes();
         }
 
-        DocPickerFragment photoFragment = DocPickerFragment.newInstance();
-        FragmentUtil.addFragment(this, R.id.container, photoFragment);
+        DocPickerFragment docPickerFragment = DocPickerFragment.newInstance();
+        FragmentUtil.addFragment(this, R.id.container, docPickerFragment);
     }
 
     private void setToolbarTitle(int count) {
