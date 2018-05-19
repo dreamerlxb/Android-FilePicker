@@ -22,11 +22,11 @@ import droidninja.filepicker.R;
 
 public class SmoothCheckBox extends View implements Checkable {
     private static final String KEY_INSTANCE_STATE = "InstanceState";
-    private static final int COLOR_TICK      = Color.WHITE;
+    private static final int COLOR_TICK = Color.WHITE;
     private static final int COLOR_UNCHECKED = Color.WHITE;
-    private static final int COLOR_CHECKED   = Color.parseColor("#FB4846");
+    private static final int COLOR_CHECKED = Color.parseColor("#FB4846");
     private static final int COLOR_FLOOR_UNCHECKED = Color.parseColor("#DFDFDF");
-    private static final int DEF_DRAW_SIZE     = 25;
+    private static final int DEF_DRAW_SIZE = 25;
     private static final int DEF_ANIM_DURATION = 300;
 
     private Paint mPaint, mTickPaint, mFloorPaint;
@@ -150,6 +150,7 @@ public class SmoothCheckBox extends View implements Checkable {
 
     /**
      * <p>checked with animation</p>
+     *
      * @param checked checked
      * @param animate change with animation
      */

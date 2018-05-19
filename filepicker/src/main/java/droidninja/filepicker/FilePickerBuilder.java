@@ -44,35 +44,35 @@ public class FilePickerBuilder {
     return this;
   }
 
-  public FilePickerBuilder setSelectedFiles(ArrayList<String> selectedPhotos) {
-    mPickerOptionsBundle.putStringArrayList(FilePickerConst.KEY_SELECTED_MEDIA, selectedPhotos);
-    return this;
-  }
+//  public FilePickerBuilder setSelectedFiles(ArrayList<String> selectedPhotos) {
+//    mPickerOptionsBundle.putStringArrayList(FilePickerConst.KEY_SELECTED_MEDIA, selectedPhotos);
+//    return this;
+//  }
 
-  public FilePickerBuilder enableVideoPicker(boolean status) {
-    PickerManager.getInstance().setShowVideos(status);
-    return this;
-  }
-
-  public FilePickerBuilder enableImagePicker(boolean status) {
-    PickerManager.getInstance().setShowImages(status);
-    return this;
-  }
+//  public FilePickerBuilder enableVideoPicker(boolean status) {
+//    PickerManager.getInstance().setShowVideos(status);
+//    return this;
+//  }
+//
+//  public FilePickerBuilder enableImagePicker(boolean status) {
+//    PickerManager.getInstance().setShowImages(status);
+//    return this;
+//  }
 
   public FilePickerBuilder enableSelectAll(boolean status) {
     PickerManager.getInstance().enableSelectAll(status);
     return this;
   }
 
-  public FilePickerBuilder setCameraPlaceholder(@DrawableRes int drawable) {
-    PickerManager.getInstance().setCameraDrawable(drawable);
-    return this;
-  }
+//  public FilePickerBuilder setCameraPlaceholder(@DrawableRes int drawable) {
+//    PickerManager.getInstance().setCameraDrawable(drawable);
+//    return this;
+//  }
 
-  public FilePickerBuilder showGifs(boolean status) {
-    PickerManager.getInstance().setShowGif(status);
-    return this;
-  }
+//  public FilePickerBuilder showGifs(boolean status) {
+//    PickerManager.getInstance().setShowGif(status);
+//    return this;
+//  }
 
   public FilePickerBuilder showFolderView(boolean status) {
     PickerManager.getInstance().setShowFolderView(status);
@@ -84,10 +84,10 @@ public class FilePickerBuilder {
     return this;
   }
 
-  public FilePickerBuilder enableCameraSupport(boolean status) {
-    PickerManager.getInstance().setEnableCamera(status);
-    return this;
-  }
+//  public FilePickerBuilder enableCameraSupport(boolean status) {
+//    PickerManager.getInstance().setEnableCamera(status);
+//    return this;
+//  }
 
   public FilePickerBuilder withOrientation(Orientation orientation) {
     PickerManager.getInstance().setOrientation(orientation);
@@ -110,15 +110,15 @@ public class FilePickerBuilder {
     return this;
   }
 
-  public void pickPhoto(Activity context) {
-    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
-    start(context, FilePickerConst.REQUEST_CODE_PHOTO);
-  }
+//  public void pickPhoto(Activity context) {
+//    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
+//    start(context, FilePickerConst.REQUEST_CODE_PHOTO);
+//  }
 
-  public void pickPhoto(Fragment context) {
-    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
-    start(context, FilePickerConst.REQUEST_CODE_PHOTO);
-  }
+//  public void pickPhoto(Fragment context) {
+//    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
+//    start(context, FilePickerConst.REQUEST_CODE_PHOTO);
+//  }
 
   public void pickFile(Activity context) {
     mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.DOC_PICKER);
@@ -130,15 +130,15 @@ public class FilePickerBuilder {
     start(context, FilePickerConst.REQUEST_CODE_DOC);
   }
 
-  public void pickPhoto(Activity context, int requestCode) {
-    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
-    start(context, requestCode);
-  }
+//  public void pickPhoto(Activity context, int requestCode) {
+//    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
+//    start(context, requestCode);
+//  }
 
-  public void pickPhoto(Fragment context, int requestCode) {
-    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
-    start(context, requestCode);
-  }
+//  public void pickPhoto(Fragment context, int requestCode) {
+//    mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.MEDIA_PICKER);
+//    start(context, requestCode);
+//  }
 
   public void pickFile(Activity context, int requestCode) {
     mPickerOptionsBundle.putInt(FilePickerConst.EXTRA_PICKER_TYPE, FilePickerConst.DOC_PICKER);

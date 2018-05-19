@@ -11,8 +11,6 @@
         <activity
             android:name=".FilePickerActivity"
             android:configChanges="orientation|screenSize"/>
-        <activity android:name=".MediaDetailsActivity"
-            android:configChanges="orientation|screenSize"/>
 
         <provider
             android:name=".utils.FilePickerProvider"

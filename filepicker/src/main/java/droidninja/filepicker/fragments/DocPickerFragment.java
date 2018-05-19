@@ -37,10 +37,11 @@ public class DocPickerFragment extends BaseFragment {
         // Required empty public constructor
     }
 
-    public interface DocPickerFragmentListener{
+    public interface DocPickerFragmentListener {
     }
 
-    @Override public void onCreate(@Nullable Bundle savedInstanceState) {
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
@@ -54,7 +55,7 @@ public class DocPickerFragment extends BaseFragment {
 
     public static DocPickerFragment newInstance() {
         DocPickerFragment docPickerFragment = new DocPickerFragment();
-        return  docPickerFragment;
+        return docPickerFragment;
     }
 
     @Override
@@ -88,7 +89,7 @@ public class DocPickerFragment extends BaseFragment {
 
     private void setViews(View view) {
         tabLayout = view.findViewById(R.id.tabs);
-        viewPager =  view.findViewById(R.id.viewPager);
+        viewPager = view.findViewById(R.id.viewPager);
         progressBar = view.findViewById(R.id.progress_bar);
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -97,31 +98,29 @@ public class DocPickerFragment extends BaseFragment {
 
     private void setData() {
         MediaStoreHelper.getDocs(getActivity(),
-            PickerManager.getInstance().getFileTypes(),
-            PickerManager.getInstance().getSortingType().getComparator(),
-            new FileMapResultCallback() {
-                @Override
-                public void onResultCallback(Map<FileType, List<Document>> files) {
-                    if(!isAdded()) return;
-                    progressBar.setVisibility(View.GONE);
-                    setDataOnFragments(files);
+                PickerManager.getInstance().getFileTypes(),
+                PickerManager.getInstance().getSortingType().getComparator(),
+                new FileMapResultCallback() {
+                    @Override
+                    public void onResultCallback(Map<FileType, List<Document>> files) {
+                        if (!isAdded()) return;
+                        progressBar.setVisibility(View.GONE);
+                        setDataOnFragments(files);
+                    }
                 }
-            }
         );
     }
 
     private void setDataOnFragments(Map<FileType, List<Document>> filesMap) {
         SectionsPagerAdapter sectionsPagerAdapter = (SectionsPagerAdapter) viewPager.getAdapter();
-        if(sectionsPagerAdapter!=null)
-        {
+        if (sectionsPagerAdapter != null) {
             for (int index = 0; index < sectionsPagerAdapter.getCount(); index++) {
                 DocFragment docFragment = (DocFragment) getChildFragmentManager()
                         .findFragmentByTag(
-                                "android:switcher:" + R.id.viewPager + ":"+index);
-                if(docFragment!=null)
-                {
+                                "android:switcher:" + R.id.viewPager + ":" + index);
+                if (docFragment != null) {
                     FileType fileType = docFragment.getFileType();
-                    if(fileType != null) {
+                    if (fileType != null) {
                         List<Document> filesFilteredByType = filesMap.get(fileType);
                         if (filesFilteredByType != null)
                             docFragment.updateList(filesFilteredByType);
@@ -135,7 +134,7 @@ public class DocPickerFragment extends BaseFragment {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getChildFragmentManager());
         ArrayList<FileType> supportedTypes = PickerManager.getInstance().getFileTypes();
         for (int index = 0; index < supportedTypes.size(); index++) {
-            adapter.addFragment(DocFragment.newInstance(supportedTypes.get(index)),supportedTypes.get(index).title);
+            adapter.addFragment(DocFragment.newInstance(supportedTypes.get(index)), supportedTypes.get(index).title);
         }
 
         viewPager.setOffscreenPageLimit(supportedTypes.size());
