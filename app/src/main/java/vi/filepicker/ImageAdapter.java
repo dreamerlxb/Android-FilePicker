@@ -8,10 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ImageView;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
